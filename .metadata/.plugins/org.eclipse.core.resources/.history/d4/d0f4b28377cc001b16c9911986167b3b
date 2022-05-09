@@ -1,0 +1,64 @@
+package UI;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+public class RestaurentWindow {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					RestaurentWindow window = new RestaurentWindow();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public RestaurentWindow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 800, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		BorderLayout borderLayout = new BorderLayout();
+		borderLayout.setVgap(10);
+		borderLayout.setHgap(10);
+		frame.setLayout(borderLayout);
+		
+		JScrollPane scrollPane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);		
+        scrollPane.getVerticalScrollBar().setUnitIncrement(30);
+        scrollPane.getHorizontalScrollBar().setUnitIncrement(30);
+        frame.getContentPane().add(scrollPane);
+        
+        JPanel header = new JPanel();
+		frame.getContentPane().add(header,BorderLayout.NORTH);
+		header.setPreferredSize(new Dimension(800, 30));
+		header.setLayout(new BorderLayout(0, 0));
+		
+		
+	}
+
+}

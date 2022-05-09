@@ -1,0 +1,5 @@
+pizza,200
+roll,200
+burger,200
+Large pizza,3000
+soup,1000

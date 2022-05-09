@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.student.editor.StudentEditor">
+   <children>
+      <Rectangle fill="DODGERBLUE" height="231.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <FlowPane alignment="CENTER" layoutX="49.0" layoutY="531.0" prefHeight="60.0" prefWidth="502.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <JFXToggleButton fx:id="toggleEditing" prefHeight="60.0" prefWidth="166.0" text="Turn ON Editing">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXToggleButton>
+            <JFXButton fx:id="deleteDepart1" ripplerFill="RED" text="Transfer " />
+            <JFXButton fx:id="deleteDepart" ripplerFill="RED" text="Delete This Student" />
+         </children>
+      </FlowPane>
+      <AnchorPane fx:id="main" layoutX="27.0" layoutY="102.0" prefHeight="417.0" prefWidth="546.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15;">
+         <children>
+            <Rectangle fill="DODGERBLUE" height="157.0" layoutX="198.0" layoutY="-78.0" stroke="BLACK" strokeType="INSIDE" width="152.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Rectangle>
+            <JFXButton fx:id="next" buttonType="RAISED" layoutX="11.0" layoutY="206.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 100;" text=" ">
+               <padding>
+                  <Insets bottom="7.0" left="6.0" top="7.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="prev" buttonType="RAISED" layoutX="497.0" layoutY="206.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 100;" text=" ">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="-1.0" top="7.0" />
+               </padding>
+            </JFXButton>
+            <ScrollPane layoutX="62.0" layoutY="111.0" prefHeight="291.0" prefWidth="422.0">
+               <content>
+                  <BorderPane fx:id="border" prefHeight="475.0" prefWidth="400.0">
+                     <left>
+                        <VBox prefHeight="546.0" prefWidth="153.0" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Student's Name :">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Father's Name :">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Mother's Name :">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Gender :">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Date of Birth :">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="NIC number: ">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Contact Number : ">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="E-mail:">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="297.0" prefHeight="21.0" prefWidth="137.0" text="Father's Contact #:">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <VBox spacing="65.0">
+                                 <children>
+                                    <Label text="Father's Occupation">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Address:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="60.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                     </left>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <right>
+                        <VBox fx:id="show" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label fx:id="show1" text="Student's Name :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="show2" text="Father's Name :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="show3" text="Mother's Name :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="show4" text="Gender :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="show5" text="Date of Birth :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="show6" text="NIC number: ">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="show7" text="Contact Number : ">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="show11" text="E-mail">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="show9" text="Father's Contact #">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <VBox prefHeight="117.0" prefWidth="148.0" spacing="65.0">
+                                 <children>
+                                    <Label fx:id="show10" prefHeight="98.0" prefWidth="177.0" text="Father's Occupation" wrapText="true" />
+                                    <Label fx:id="show8" prefHeight="21.0" prefWidth="177.0" text="Address" wrapText="true" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets bottom="60.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </right>
+                  </BorderPane>
+               </content>
+            </ScrollPane>
+            <AnchorPane fx:id="inputs" layoutX="12.0" layoutY="-182.0">
+               <children>
+                  <JFXTextField fx:id="stuName" layoutY="-2.0" prefHeight="25.0" prefWidth="176.0" />
+                  <JFXTextField fx:id="fatherName" layoutY="39.0" prefHeight="25.0" prefWidth="176.0" />
+                  <JFXTextField fx:id="motherName" layoutY="80.0" prefHeight="25.0" prefWidth="176.0" />
+                  <HBox layoutX="5.0" layoutY="127.0" prefHeight="17.0" prefWidth="142.0">
+                     <children>
+                        <JFXRadioButton fx:id="male" text="Male" />
+                        <JFXRadioButton fx:id="female" text="Female" />
+                     </children>
+                  </HBox>
+                  <JFXDatePicker fx:id="DOB" editable="false" layoutY="160.0" prefWidth="176.0" />
+                  <JFXTextField fx:id="contact" layoutY="245.0" prefHeight="25.0" prefWidth="176.0" />
+                  <JFXTextField fx:id="email" layoutY="285.0" prefHeight="25.0" prefWidth="176.0" />
+                  <JFXTextField fx:id="contactFather" layoutY="326.0" prefHeight="25.0" prefWidth="176.0" />
+                  <JFXTextArea fx:id="occupation" layoutY="380.0" prefHeight="60.0" prefWidth="176.0" style="-fx-background-color: lightgray;" text="asdasd" />
+                  <JFXTextArea fx:id="address" layoutY="468.0" prefHeight="60.0" prefWidth="176.0" style="-fx-background-color: lightgray;" text="asdasd" />
+                  <Label fx:id="fatherError" layoutY="66.0" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="motherError" layoutY="107.0" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="contactError" layoutY="272.0" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="NICError" layoutY="230.0" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emailError" layoutY="312.0" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fatherContactError" layoutY="353.0" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fatherOccupationError" layoutY="446.0" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addressError" layoutX="1.0" layoutY="534.0" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="stuError" layoutY="25.0" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="nic1" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic2" layoutX="12.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic3" layoutX="24.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic12" layoutX="141.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic11" layoutX="129.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic10" layoutX="117.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic13" layoutX="162.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic9" layoutX="105.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic7" layoutX="81.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic8" layoutX="93.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic6" layoutX="69.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic5" layoutX="48.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+                  <JFXTextField fx:id="nic4" layoutX="36.0" layoutY="202.0" prefHeight="26.0" prefWidth="11.0" />
+               </children>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

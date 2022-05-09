@@ -1,0 +1,48 @@
+package models;
+
+import java.util.ArrayList;
+
+public class Rider extends User{
+	
+	private String[] vehicle = new String[3];
+	private String firstName;
+	private String lastName;
+	private ArrayList<Cart> ordersList = new ArrayList<Cart>();
+	
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	
+	public String[] getVehicle() {
+		return vehicle;
+	}
+	public void setVehicle(String[] vehicle) {
+		this.vehicle = vehicle;
+	}
+	
+
+	public Rider(String user, String pass , String mail, String firstName, String last, String phone,String[] vehicle, String city){
+		super(user,pass,mail,phone,city);
+		this.vehicle=vehicle;
+		this.firstName=firstName;
+		this.lastName=last;
+	}
+	public ArrayList<Order> getOrdersList() {
+		return ordersList;
+	}
+	public void setOrdersList(ArrayList<Order> orders) {
+		this.ordersList = orders;
+	}
+
+}

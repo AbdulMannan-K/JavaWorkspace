@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Home">
+   <left>
+      <VBox prefHeight="559.0" prefWidth="248.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane prefHeight="244.0" prefWidth="366.0">
+               <children>
+                  <FlowPane prefWidth="253.0">
+                     <children>
+                        <ImageView fx:id="picture" fitHeight="244.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: black;">
+                           <FlowPane.margin>
+                              <Insets />
+                           </FlowPane.margin>
+                        </ImageView>
+                     </children>
+                  </FlowPane>
+                  <Circle fx:id="cir" fill="#c8c9c9" layoutX="138.0" layoutY="94.0" radius="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0">
+                     <effect>
+                        <DropShadow color="#797575" />
+                     </effect>
+                  </Circle>
+                  <Label fx:id="userName" alignment="CENTER" layoutX="14.0" layoutY="170.0" prefHeight="41.0" prefWidth="249.0" text="Name of User Logged in" textFill="WHITE" wrapText="true" />
+                  <ImageView fitHeight="138.0" fitWidth="128.0" layoutX="74.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Downloads/download.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+            <JFXButton fx:id="homeBtn" graphicTextGap="20.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-radius: 0;" text="Home" />
+            <JFXButton fx:id="stuViewBtn" graphicTextGap="20.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-radius: 0;" text="View Students" />
+            <JFXButton fx:id="departViewBtn" graphicTextGap="20.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-radius: 0;" text="View Departments">
+               <cursor>
+                  <Cursor fx:constant="E_RESIZE" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="logoutBtn" graphicTextGap="20.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-radius: 0;" text="Logout" />
+            <JFXButton fx:id="exitBtn" graphicTextGap="20.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-radius: 0;" text="Exit" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+         <padding>
+            <Insets right="-1.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <StackPane fx:id="stack" minWidth="300.0" prefHeight="150.0" prefWidth="200.0" />
+         </center>
+         <top>
+            <FlowPane alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="657.0" style="-fx-background-color: #206B96;" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar style="-fx-background-color: transparent;">
+                    <menus>
+                      <Menu mnemonicParsing="false" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <JFXButton fx:id="options" />
+                           </graphic>
+                           <items>
+                              <MenuItem fx:id="user" mnemonicParsing="false" text="Users" />
+                              <MenuItem fx:id="about" mnemonicParsing="false" text="About Us" />
+                           </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+               <effect>
+                  <DropShadow radius="4.75" width="0.0" />
+               </effect>
+            </FlowPane>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,33 @@
+package UI;
+
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+
+public class RestaurentMenu extends JInternalFrame {
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					RestaurentMenu frame = new RestaurentMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public RestaurentMenu() {
+		setBounds(100, 100, 450, 300);
+
+	}
+
+}

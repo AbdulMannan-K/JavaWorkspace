@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="302.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.student.admission.inputs.Input1">
+   <children>
+      <AnchorPane layoutX="66.0" layoutY="197.0" prefHeight="99.0" prefWidth="171.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <VBox alignment="CENTER_LEFT" layoutX="32.0" layoutY="30.0" prefHeight="54.0" prefWidth="102.0" spacing="18.0">
+               <children>
+                  <JFXRadioButton fx:id="genderMale" text="Male" />
+                  <JFXRadioButton fx:id="genderFemale" text="Female" />
+               </children>
+            </VBox>
+            <FlowPane alignment="CENTER" layoutX="15.0" layoutY="-18.0" prefHeight="36.0" prefWidth="139.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label text="What's Your Gender" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="22.0" layoutY="56.0" prefHeight="86.0" prefWidth="259.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <JFXTextField fx:id="stuName" layoutX="18.0" layoutY="30.0" prefHeight="26.0" prefWidth="220.0" />
+            <Label fx:id="stuNameError" layoutX="18.0" layoutY="58.0" prefWidth="223.0" text="error" textFill="RED" visible="false" wrapText="true">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <FlowPane alignment="CENTER" layoutX="60.0" layoutY="-18.0" prefHeight="36.0" prefWidth="139.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label text="Provide Your Name" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

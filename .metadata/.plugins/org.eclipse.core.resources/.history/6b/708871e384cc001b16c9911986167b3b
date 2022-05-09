@@ -1,0 +1,164 @@
+package UI;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+import models.Restaurent;
+
+public class RestaurentWindow {
+
+	private JFrame frame;
+	Restaurent restaurent;
+
+	
+	public JFrame getFrame() {
+		return frame;
+	}
+	
+	public RestaurentWindow(Restaurent restaurent) {
+		this.restaurent=restaurent;
+		initialize();
+	}
+
+	/**
+	 * Create the application.
+	 */
+//	public RestaurentWindow() {
+//		initialize();
+//	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 800, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		BorderLayout borderLayout = new BorderLayout();
+		borderLayout.setVgap(10);
+		borderLayout.setHgap(10);
+		frame.getContentPane().setLayout(borderLayout);
+		
+		JScrollPane scrollPane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);		
+        scrollPane.getVerticalScrollBar().setUnitIncrement(30);
+        scrollPane.getHorizontalScrollBar().setUnitIncrement(30);
+        frame.getContentPane().add(scrollPane);
+        
+        JPanel header = new JPanel();
+		frame.getContentPane().add(header,BorderLayout.NORTH);
+		header.setPreferredSize(new Dimension(800, 30));
+		header.setLayout(new BorderLayout(0, 0));
+		
+		JLabel restaurentName = new JLabel(restaurent.getRestaurentName());
+		restaurentName.setHorizontalAlignment(SwingConstants.CENTER);
+		header.add(restaurentName, BorderLayout.CENTER);
+		
+		JButton menu = new JButton("Menu");
+		menu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		header.add(menu, BorderLayout.WEST);
+		
+		JButton restaurentButton = new JButton("Account");
+		header.add(restaurentButton, BorderLayout.EAST);
+		
+		JPanel superPanel = new JPanel();
+		superPanel.setLayout(new BoxLayout(superPanel, BoxLayout.Y_AXIS));
+		scrollPane.setViewportView(superPanel);
+		superPanel.setBorder(new EmptyBorder(30,30,30,30));
+		
+		JPanel subPanel = new JPanel();
+		superPanel.add(subPanel);
+		subPanel.setLayout(new GridLayout(0, 2, 20, 20));
+		subPanel.setBorder(new EmptyBorder(30,30,30,30));
+		
+		
+		JPanel[] panels = new JPanel[restaurent.getOrdersList().getOrders().size()];
+		JLabel[][] labels ;
+		
+		for(int i =0 ; i < panels.length+200; i++) {
+			panels[i] = new JPanel();
+			panels[i].setBackground(Color.white);
+			panels[i].setLayout(new GridLayout(0,2));
+			panels[i].setBorder(new EmptyBorder(30,30,30,30));
+			subPanel.add(panels[i]);
+			
+			
+			labels = new JLabel[panels.length][restaurent.getOrdersList().getOrders().get(i).getOrderList().size() * 2];
+			
+			for(int k=0 ,m=0; k < restaurent.getOrdersList().getOrders().get(i).getOrderList().size()  ; k++ ) {
+				
+					labels[i][m] = new JLabel(restaurent.getOrdersList().getOrders().get(i).getOrderList().get(k).getName());
+					panels[i].add(labels[i][m]);
+					m++;
+					
+					labels[i][m] = new JLabel(Integer.toString(restaurent.getOrdersList().getOrders().get(i).getOrderList().get(k).getPrice()));
+					panels[i].add(labels[i][m]);
+					m++;
+				
+			}
+			
+			JLabel label = new JLabel(Boolean.toString(restaurent.getOrdersList().getOrders().get(i).isStatus()));
+			panels[i].add(label);
+			
+			int resNumber = i;
+
+			panels[i].addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					System.out.println("Clicked");
+					JPanel panel = new JPanel();
+					superPanel.add(panel);
+					superPanel.remove(subPanel);
+					panel.setLayout(new GridLayout(0,2,20,20));
+					
+					JLabel customerUserName = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getUserName());
+					JLabel customerName = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getFirstName()+restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getLastName());
+					JLabel customerAdress = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getAdress());
+					JLabel customerNum = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getPhoneNumber());
+					JLabel customerMail = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getEmail());
+					
+					panel.add(customerUserName);panel.add(customerName);panel.add(customerAdress);panel.add(customerNum);panel.add(customerMail);
+				}
+			});
+			
+
+			panels[i].addMouseListener(new MouseAdapter() {
+				@Override
+				public void mousePressed(MouseEvent e) {
+					JPanel panel = new JPanel();
+					superPanel.add(panel);
+					superPanel.remove(subPanel);
+					panel.setLayout(new GridLayout(0,2,20,20));
+					
+					JLabel customerUserName = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getUserName());
+					JLabel customerName = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getFirstName()+restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getLastName());
+					JLabel customerAdress = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getAdress());
+					JLabel customerNum = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getPhoneNumber());
+					JLabel customerMail = new JLabel(restaurent.getOrdersList().getOrders().get(resNumber).getCustomer().getEmail());
+					
+					panel.add(customerUserName);panel.add(customerName);panel.add(customerAdress);panel.add(customerNum);panel.add(customerMail);
+				}
+			});
+		}
+	}
+
+}

@@ -1,0 +1,61 @@
+import java.io.*;
+import java.util.*;
+
+public class DataHandle {
+
+	private static ArrayList<Customer> customers = new ArrayList<Customer>();
+	
+	
+	public void setCustomers(ArrayList<Customer> customers) {
+		this.customers=customers;
+	}
+	
+	public ArrayList<Customer> getCustomers(){
+		return this.customers;
+	}
+	
+	
+	public void signup(String Name, String adress, String mail , String pass,String first,String last, String phone) {
+		customers.add(new Customer(Name,pass,mail,first,last,phone,adress));
+		write();
+	}
+	
+	public void write() {
+		try {
+			FileWriter write = new FileWriter("Customer.txt");
+			Formatter fmt = new Formatter(write);
+			
+			for(Customer customer : customers) {
+				fmt.format("%-25s%25s%35s%25s%25s%25s%55s\n", customer.getUserName(),customer.getPassword(),customer.getEmail(),customer.getFirstName(),customer.getLastName(),customer.getPhoneNumber(),customer.getAdress());
+			}
+			
+			fmt.close();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		
+	}
+	
+	public void read() {
+		
+		try {
+			FileReader read = new FileReader("Customer.txt");
+			BufferedReader reader = new BufferedReader(read);
+			String line;
+			
+			
+			while((line=reader.readLine())!=null) {
+				StringTokenizer st = new StringTokenizer(line);
+				if(st.hasMoreTokens())
+					customers.add(new Customer(st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken()));
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

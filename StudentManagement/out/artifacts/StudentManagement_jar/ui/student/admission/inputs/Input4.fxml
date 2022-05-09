@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="302.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.student.admission.inputs.Input4">
+   <children>
+      <AnchorPane layoutX="21.0" layoutY="29.0" prefHeight="86.0" prefWidth="259.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <FlowPane alignment="CENTER" layoutX="36.0" layoutY="-18.0" prefHeight="36.0" prefWidth="187.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label text="Provide Your Contact Number" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu" size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </FlowPane>
+            <JFXTextField fx:id="contactStu" alignment="CENTER" labelFloat="true" layoutX="50.0" layoutY="30.0" prefHeight="26.0" prefWidth="160.0" />
+            <FlowPane alignment="CENTER" layoutX="36.0" layoutY="57.0" prefHeight="15.0" prefWidth="187.0">
+               <children>
+                  <Label fx:id="errorContactStu" alignment="CENTER" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="159.0" prefHeight="103.0" prefWidth="259.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <FlowPane alignment="CENTER" layoutX="36.0" layoutY="-18.0" prefHeight="36.0" prefWidth="187.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label text="Whats your Father's Occuptaion?" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu" size="12.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </FlowPane>
+            <JFXTextArea fx:id="occupation" layoutX="24.0" layoutY="29.0" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: #e7e4e4;">
+               <effect>
+                  <Glow />
+               </effect>
+            </JFXTextArea>
+            <Label fx:id="errorOccupation" layoutX="24.0" layoutY="85.0" text="Label" textFill="RED" visible="false">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="20.0" layoutY="304.0" prefHeight="86.0" prefWidth="259.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <FlowPane alignment="CENTER" layoutX="20.0" layoutY="-18.0" prefHeight="36.0" prefWidth="219.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label text="Provide Your Father's Contact Number" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu" size="12.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </FlowPane>
+            <JFXTextField fx:id="contactFather" alignment="CENTER" labelFloat="true" layoutX="50.0" layoutY="29.0" prefHeight="26.0" prefWidth="160.0" />
+            <FlowPane alignment="CENTER" layoutX="36.0" layoutY="56.0" prefHeight="15.0" prefWidth="187.0">
+               <children>
+                  <Label fx:id="errorContactFather" alignment="CENTER" text="Label" textFill="RED" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

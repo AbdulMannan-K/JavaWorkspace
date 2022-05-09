@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stack" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.student.admission.StudentAdmission">
+   <children>
+      <AnchorPane fx:id="mainPane" prefHeight="630.0" prefWidth="411.0" style="-fx-background-color: white;">
+      <children>
+         <Rectangle fill="DODGERBLUE" height="252.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="411.0" />
+         <AnchorPane fx:id="view" layoutX="31.0" layoutY="157.0" prefHeight="448.0" prefWidth="348.0" style="-fx-background-color: #ffffff;">
+            <children>
+               <JFXButton fx:id="browseBtn" alignment="CENTER" layoutX="136.0" layoutY="83.0" text="Browse a Pic">
+                  <font>
+                     <Font name="Segoe UI" size="11.0" />
+                  </font>
+               </JFXButton>
+            </children>
+            <effect>
+               <DropShadow />
+            </effect>
+         </AnchorPane>
+         <JFXButton fx:id="prev" alignment="CENTER" buttonType="RAISED" layoutX="12.0" layoutY="385.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 100;" text=" ">
+            <font>
+               <Font name="Ubuntu" size="13.0" />
+            </font>
+               <padding>
+                  <Insets bottom="7.0" left="6.0" top="7.0" />
+               </padding>
+            </JFXButton>
+         <JFXButton fx:id="next" alignment="CENTER" buttonType="RAISED" layoutX="361.0" layoutY="385.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 100;" text=" ">
+            <effect>
+               <DropShadow />
+            </effect>
+            <font>
+               <Font name="Ubuntu" size="13.0" />
+            </font>
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="-1.0" top="7.0" />
+               </padding>
+         </JFXButton>
+         <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="161.0" layoutX="126.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" width="158.0">
+            <effect>
+               <DropShadow />
+            </effect>
+         </Rectangle>
+            <FlowPane alignment="CENTER_LEFT" layoutX="202.0" layoutY="85.0" prefHeight="41.0" prefWidth="178.0">
+               <children>
+               <Label fx:id="name" text="Label" visible="false">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </FlowPane>
+      </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</StackPane>

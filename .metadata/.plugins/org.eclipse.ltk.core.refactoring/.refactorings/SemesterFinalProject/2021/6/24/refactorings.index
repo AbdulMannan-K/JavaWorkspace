@@ -1,0 +1,31 @@
+1623047011804	Delete element
+1623084860338	Delete element
+1623084884584	Copy compilation units
+1623084893281	Delete elements
+1623084916141	Copy compilation units
+1623084949781	Delete elements
+1623085366856	Copy compilation units
+1623085372144	Delete elements
+1623090832478	Encapsulate field 'firstName'
+1623090844147	Encapsulate field 'lastName'
+1623090849406	Encapsulate field 'phoneNumber'
+1623090854716	Encapsulate field 'userName'
+1623090862323	Encapsulate field 'password'
+1623090868137	Encapsulate field 'email'
+1623090876423	Encapsulate field 'adress'
+1623095901935	Infer generic type arguments
+1623131129102	Encapsulate field 'restaurentName'
+1623176574277	Copy compilation unit
+1623176583082	Delete element
+1623183931238	Delete element
+1623241997410	Encapsulate field 'rating'
+1623242003145	Encapsulate field 'orderNo'
+1623245270582	Encapsulate field 'name'
+1623245276767	Encapsulate field 'price'
+1623245366415	Encapsulate field 'foodList'
+1623318928741	Encapsulate field 'orders'
+1623468302052	Encapsulate field 'cart'
+1623468625570	Encapsulate field 'orderList'
+1623468630638	Encapsulate field 'customer'
+1623468638305	Encapsulate field 'restaurent'
+1623516915117	Encapsulate field 'status'

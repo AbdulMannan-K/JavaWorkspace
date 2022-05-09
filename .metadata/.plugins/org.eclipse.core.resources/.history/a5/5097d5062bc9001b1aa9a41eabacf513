@@ -1,0 +1,98 @@
+package UI;
+
+import java.awt.CardLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import DataHandling.DataHandle;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
+
+public class CustomerWindow {
+
+	private JFrame frame;
+	
+	DataHandle data = new DataHandle();
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	/**
+	 * Create the application.
+	 * @throws InterruptedException 
+	 */
+	public CustomerWindow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 * @throws InterruptedException 
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 800, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel Header = new JPanel();
+		Header.setBounds(0, 0, 784, 40);
+		frame.getContentPane().add(Header);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JPanel[] panel = new JPanel[data.getRestaurents().size()];
+		JLabel[][] labels = new JLabel[data.getRestaurents().size()][6];
+		
+		
+		for(int i=0,j=0 ; i < panel.length ; i++,j+=100) {
+			panel[i] = new JPanel();
+			panel[i].setBounds(100, 64+j, 600, 70);
+			frame.getContentPane().add(panel[i]);
+			panel[i].setLayout(null);
+			
+			for(int k=0 ; k < 6 ; ) {
+				
+				labels[i][k] = new JLabel(data.getRestaurents().get(i).getRestaurentName());
+				labels[i][k].setBounds(10, 11, 139, 23);
+				panel[i].add(labels[i][k]);
+				k++;
+				
+				labels[i][k] = new JLabel(data.getRestaurents().get(i).getAdress());
+				labels[i][k].setBounds(10, 36, 139, 23);
+				panel[i].add(labels[i][k]);
+				k++;
+				
+				labels[i][k] = new JLabel(Double.toString(data.getRestaurents().get(i).getRating()));
+				labels[i][k].setBounds(202, 11, 139, 23);
+				panel[i].add(labels[i][k]);
+				k++;
+				
+				labels[i][k] = new JLabel(data.getRestaurents().get(i).getEmail());
+				labels[i][k].setBounds(202, 36, 139, 23);
+				panel[i].add(labels[i][k]);
+				k++;
+				
+				labels[i][k] = new JLabel(data.getRestaurents().get(i).getPhoneNumber());
+				labels[i][k].setBounds(417, 11, 139, 23);
+				panel[i].add(labels[i][k]);
+				k++;
+				
+				labels[i][k] = new JLabel(Integer.toString(data.getRestaurents().get(i).getOrderNo());
+				labels[i][k].setBounds(417, 36, 139, 23);
+				panel[i].add(labels[i][k]);
+				k++;
+			}
+			
+		}
+		
+		
+		
+		
+		
+	}
+}

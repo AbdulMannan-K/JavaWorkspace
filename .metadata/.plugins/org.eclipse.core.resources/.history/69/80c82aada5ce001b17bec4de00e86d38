@@ -1,0 +1,170 @@
+package DataHandling;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Formatter;
+import java.util.StringTokenizer;
+
+import models.Customer;
+import models.FoodItems;
+import models.Order;
+import models.Restaurent;
+
+public class ReadnWriteCart {
+	
+	DataHandle data = new DataHandle();
+	
+	public void write(String filename, Customer customer) {
+		try {
+			FileWriter write = new FileWriter(filename);
+			
+			for(int i=0 ; i< customer.getCart().getOrders().size() ; i++){
+				for(int j=0 ; j < customer.getCart().getOrders().get(i).getOrderList().size(); j++) {
+					write.write(customer.getCart().getOrders().get(i).getOrderList().get(j).getName()+","+customer.getCart().getOrders().get(i).getOrderList().get(j).getPrice()+",");
+//					fmt.format("%-25s%25d%25s", customer.getCart().getOrders().get(i).getOrderList().get(j).getName(),customer.getCart().getOrders().get(i).getOrderList().get(j).getPrice(),"   ");
+				}
+				write.write(customer.getCart().getOrders().get(i).getid()+",");
+//				fmt.format("%-25d", customer.getCart().getOrders().get(i).getid());
+				write.write(customer.getCart().getOrders().get(i).getRestaurent().getRestaurentName()+",");
+//				fmt.format("%-25s", customer.getCart().getOrders().get(i).getRestaurent().getRestaurentName());
+				write.write(Boolean.toString(customer.getCart().getOrders().get(i).isStatus()));
+//				fmt.format("%-25s\n", customer.getCart().getOrders().get(i).isStatus());
+			}
+			
+			write.close();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void write(String filename, Restaurent restaurent) {
+		try {
+			FileWriter write = new FileWriter(filename);
+			Formatter fmt = new Formatter(write);
+			
+			for(int i=0 ; i< restaurent.getOrdersList().getOrders().size() ; i++){
+				for(int j=0 ; j < restaurent.getOrdersList().getOrders().get(i).getOrderList().size(); j++) {
+					fmt.format("%-25s%25d%25s", restaurent.getOrdersList().getOrders().get(i).getOrderList().get(j).getName(),restaurent.getOrdersList().getOrders().get(i).getOrderList().get(j).getPrice(),"   ");
+				}
+				fmt.format("%-25s", restaurent.getOrdersList().getOrders().get(i).getid());
+				fmt.format("%-25s" , restaurent.getOrdersList().getOrders().get(i).getCustomer().getUserName());
+				fmt.format("%-25s\n", restaurent.getOrdersList().getOrders().get(i).isStatus());
+			}
+			
+			fmt.close();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void read(String fileName, Customer customer) {
+		try {
+			FileReader file = new FileReader(fileName);
+			BufferedReader reader = new BufferedReader(file);
+			String line;
+			
+			ArrayList<String> foodName = new ArrayList<String>();
+			ArrayList<Integer> price = new ArrayList<Integer>();
+			while((line=reader.readLine())!=null) {
+				StringTokenizer st = new StringTokenizer(line);
+				for(int i=0 ;i <2 ;i++) {
+					if(st.hasMoreTokens()) {
+						foodName.add(st.nextToken());
+						price.add(Integer.parseInt(st.nextToken()));
+					}
+				}
+				int id = Integer.parseInt(st.nextToken());
+				String rest = st.nextToken();
+				boolean status = Boolean.parseBoolean(line);
+				boolean notfound = false;
+				Restaurent restaurent=null;
+				for(int i=0 ; i < data.getRestaurents().size() ; i++) {
+					notfound=false;
+					if(data.getRestaurents().get(i).getRestaurentName()==rest) {
+						restaurent = data.getRestaurents().get(i);
+					}else {
+						notfound=true;
+					}
+				}
+				if(!notfound) {
+					for(int i=0 ; i < foodName.size(); i++) {
+						customer.getCart().getOrders().add(new Order(customer,restaurent,status,id));
+						for(int j=0 ; j < customer.getCart().getOrders().size() ; j++) {
+							if(id==customer.getCart().getOrders().get(i).getid()) {
+								customer.getCart().getOrders().get(j).getOrderList().add(new FoodItems(foodName.get(i),price.get(i)));
+							}
+						}
+					}
+					
+				}
+				else
+					System.out.println("wrong Entries");
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+public void read(String fileName, Restaurent restaurent) {
+	try {
+		FileReader file = new FileReader(fileName);
+		BufferedReader reader = new BufferedReader(file);
+		String line;
+		
+		ArrayList<String> foodName = new ArrayList<String>();
+		ArrayList<Integer> price = new ArrayList<Integer>();
+		while((line=reader.readLine())!=null) {
+			StringTokenizer st = new StringTokenizer(line);
+			for(int i=0 ;i <2 ;i++) {
+				if(st.hasMoreTokens()) {
+					foodName.add(st.nextToken());
+					price.add(Integer.parseInt(st.nextToken()));
+				}
+			}
+			int id = Integer.parseInt(st.nextToken());
+			String cust = st.nextToken();
+			boolean status = Boolean.parseBoolean(line);
+			boolean notfound = false;
+			Customer customer=null;
+			for(int i=0 ; i < data.getCustomers().size() ; i++) {
+				notfound=false;
+				if(data.getCustomers().get(i).getUserName()==cust) {
+					customer = data.getCustomers().get(i);
+				}else {
+					notfound=true;
+				}
+			}
+			if(!notfound) {
+				for(int i=0 ; i < foodName.size(); i++) {
+					restaurent.getOrdersList().getOrders().add(new Order(customer,restaurent,status,id));
+					for(int j=0 ; j < restaurent.getOrdersList().getOrders().size() ; j++) {
+						if(id==restaurent.getOrdersList().getOrders().get(i).getid()) {
+							restaurent.getOrdersList().getOrders().get(j).getOrderList().add(new FoodItems(foodName.get(i),price.get(i)));
+						}
+					}
+				}
+				
+			}
+			else
+				System.out.println("wrong Entries");
+		}
+		
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+
+}
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="423.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.department.inputs.DepartInput">
+   <children>
+      <Rectangle fill="DODGERBLUE" height="179.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="423.0" />
+      <AnchorPane layoutX="29.0" layoutY="79.0" prefHeight="356.0" prefWidth="366.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <JFXCheckBox fx:id="bool1" layoutX="62.0" layoutY="177.0" text="BS 4-year" />
+            <JFXCheckBox fx:id="bool3" layoutX="62.0" layoutY="249.0" text="MS" />
+            <JFXCheckBox fx:id="bool4" layoutX="62.0" layoutY="283.0" text="Phd." />
+            <JFXCheckBox fx:id="bool2" layoutX="62.0" layoutY="213.0" text="BS 2-year" />
+            <JFXTextField fx:id="departName" labelFloat="true" layoutX="33.0" layoutY="70.0" prefHeight="26.0" prefWidth="301.0" promptText="Department Name">
+               <font>
+                  <Font name="Ubuntu" size="13.0" />
+               </font>
+            </JFXTextField>
+            <Text layoutX="33.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What Programs are Provided ?">
+               <font>
+                  <Font name="Roboto Regular" size="16.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="add" buttonType="RAISED" layoutX="300.0" layoutY="294.0" ripplerFill="#587534" style="-fx-background-radius: 100; -fx-background-color: dodgerblue;" text="Add" textFill="WHITE">
+               <padding>
+                  <Insets bottom="15.0" left="13.0" right="13.0" top="15.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <Label fx:id="errorDepartName" layoutX="33.0" layoutY="99.0" text="error" textFill="RED" visible="false">
+               <font>
+                  <Font name="Ubuntu" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorBool" layoutX="33.0" layoutY="313.0" text="error" textFill="RED" visible="false">
+               <font>
+                  <Font name="Ubuntu" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="26.0" layoutY="20.0" text="New Department" textFill="WHITE">
+         <font>
+            <Font name="Roboto Regular" size="29.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

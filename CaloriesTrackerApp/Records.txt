@@ -1,0 +1,6 @@
+abdul   123    149
+abdul1   123    4301
+abdul2   123    3912
+abdul3   123    6233
+abdul4   123    8842
+abdu   2334    667
