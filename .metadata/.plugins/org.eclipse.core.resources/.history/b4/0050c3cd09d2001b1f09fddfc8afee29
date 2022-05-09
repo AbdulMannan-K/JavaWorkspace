@@ -1,0 +1,36 @@
+package DataHandling;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+import models.Admin;
+
+public class ReadAdmin {
+		
+	DataHandle data = new DataHandle();
+	
+	public void read() {
+		
+		try {
+			FileReader read = new FileReader("Admin.txt");
+			BufferedReader reader = new BufferedReader(read);
+			String line;
+			
+			
+			while((line=reader.readLine())!=null) {
+				StringTokenizer st = new StringTokenizer(line);
+				if(st.hasMoreTokens())
+					data.getAdmins().add(new Admin(st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken()));
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+}

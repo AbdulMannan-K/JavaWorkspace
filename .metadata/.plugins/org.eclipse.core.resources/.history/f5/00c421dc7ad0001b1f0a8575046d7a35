@@ -1,0 +1,54 @@
+package DataHandling;
+import UI.*;
+import models.FoodItems;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		ReadnWrite read;
+		ReadAdmin adm = new ReadAdmin();
+		DataHandle data = new DataHandle();
+
+		
+		read = new ReadnWriteCustomer();
+		read.read();
+		
+		read = new ReadnWriteRider();
+		read.read();
+		
+		read = new ReadnWriteRestaurent();
+		read.read();
+		
+		adm.read();
+		
+		
+//
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("Pizza",1200));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("RollParatha",250));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		data.getRestaurents().get(0).getFoodList().add(new FoodItems("BoomRollParatha",400));
+//		
+//		data.getRestaurents().get(1).getFoodList().add(new FoodItems("Pizza",1200));
+//		data.getRestaurents().get(1).getFoodList().add(new FoodItems("RollParatha",250));
+//		data.getRestaurents().get(1).getFoodList().add(new FoodItems("BoomRollParatha",400));
+		
+		
+		StartingWindow start = new StartingWindow();
+		start.getFrame().setVisible(true);
+		
+
+		
+		
+	}
+	
+}

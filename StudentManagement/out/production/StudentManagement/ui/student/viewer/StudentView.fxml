@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stack" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.student.viewer.StudentsView">
+    <children>
+        <BorderPane fx:id="LLL" prefHeight="670.0" prefWidth="1087.0">
+            <bottom>
+            <FlowPane alignment="TOP_RIGHT" columnHalignment="CENTER" hgap="10.0" prefHeight="75.0" prefWidth="1117.0">
+               <children>
+                        <JFXButton fx:id="addNewStudent" buttonType="RAISED" ripplerFill="BLACK" style="-fx-background-color: green; -fx-background-radius: 100;" text="Add" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                        <JFXButton fx:id="viewStudent" buttonType="RAISED" style="-fx-background-color: dodgerblue; -fx-background-radius: 100; -fx-font-weight: bold;" text="View" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </JFXButton>
+                        <JFXButton fx:id="remove" buttonType="RAISED" ripplerFill="BLACK" style="-fx-background-color: red; -fx-background-radius: 100;" text="Remove" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets right="30.0" top="20.0" />
+               </padding>
+            </FlowPane>
+            </bottom>
+            <left>
+                <Pane prefHeight="534.0" prefWidth="14.0" BorderPane.alignment="CENTER" />
+            </left>
+            <right>
+                <Pane prefHeight="504.0" prefWidth="13.0" BorderPane.alignment="CENTER" />
+            </right>
+            <center>
+                <TableView fx:id="table" stylesheets="@StudentView.css" BorderPane.alignment="CENTER">
+                    <columns>
+                        <TableColumn fx:id="rolls" prefWidth="151.0" text="Roll #" />
+                        <TableColumn fx:id="names" prefWidth="226.0" text="Student Name" />
+                        <TableColumn fx:id="genders" prefWidth="71.0" text="Gender" />
+                        <TableColumn fx:id="contacts" prefWidth="132.0" text="Contact #" />
+                        <TableColumn fx:id="nics" prefWidth="131.0" text="NIC #" />
+                        <TableColumn fx:id="emails" prefWidth="165.0" text="E-mail Address" />
+                  <TableColumn fx:id="date" prefWidth="196.0" text="Date of Creation" />
+                    </columns>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </TableView>
+            </center>
+         <top>
+            <FlowPane alignment="CENTER" prefHeight="91.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox spacing="79.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <FlowPane alignment="CENTER" hgap="20.0" prefHeight="39.0" prefWidth="330.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 15 15 0;">
+                           <children>
+                              <JFXComboBox fx:id="type" prefHeight="25.0" prefWidth="83.0" promptText="Search By" />
+                              <JFXTextField fx:id="search" prefHeight="25.0" prefWidth="185.0" promptText="Search" />
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </FlowPane>
+                        <JFXComboBox fx:id="departs" prefHeight="29.0" prefWidth="205.0" promptText="Select Department" />
+                        <FlowPane alignment="CENTER" hgap="10.0" prefHeight="46.0" prefWidth="347.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15 0 0 15;">
+                           <children>
+                              <JFXComboBox fx:id="year" prefHeight="29.0" prefWidth="83.0" promptText="Select Year" />
+                              <JFXRadioButton fx:id="onlyBS" prefHeight="17.0" prefWidth="35.0" text="BS" />
+                              <JFXRadioButton fx:id="onlyMS" text="MS" />
+                              <JFXRadioButton fx:id="onlyPhd" text="Phd" />
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </FlowPane>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </FlowPane>
+         </top>
+        </BorderPane>
+    </children>
+</StackPane>

@@ -1,0 +1,78 @@
+.table-view .table-cell {
+    -fx-alignment: center;
+    -fx-font-size: 13px;
+}
+
+#serial .table-cell .check-box {
+    -fx-alignment: center;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+}
+
+.check-box .label{
+    -fx-text-fill: red;
+}
+
+.table-view .table-row-cell {
+    /*-fx-table-cell-border-color: transparent;*/
+    -fx-background-color: gray;
+}
+
+.table-view:focused .table-row-cell:selected .table-cell{
+    -fx-text-fill: black;
+}
+
+
+.table-view .column-header ,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler{
+    -fx-background-color:white;
+    -fx-border-color: white;
+}
+
+.table-view .column-header {
+    -fx-border-color: white;
+}
+
+.table-view {
+    -fx-border-color: transparent;
+    -fx-background-color: white;
+}
+
+.table-view:focused {
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-border-color: transparent;
+    -fx-background-color: white;
+    -fx-background-insets: 3 0 3 0;
+    -fx-font-size: 15px;
+    -fx-text-fill: gray;
+    -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0.0, 1);
+    -fx-padding: 15px 0px 15px 0px;
+}
+
+.table-view .table-cell {
+    -fx-background-color: white;
+}
+
+.table-row-cell{
+    -fx-cell-size: 60px;
+    -fx-background-insets: 2px;
+    /*-fx-border-color: red red red red ;*/
+    /*-fx-background-color: transparent;*/
+}
+
+.table-column-cell {
+    -fx-cell-size: 50px;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.table-cell {
+    -fx-padding: 12px;
+}

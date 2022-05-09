@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="302.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.student.admission.inputs.Input5">
+   <children>
+      <AnchorPane layoutX="22.0" layoutY="28.0" prefHeight="86.0" prefWidth="259.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <FlowPane alignment="CENTER" layoutX="36.0" layoutY="-18.0" prefHeight="36.0" prefWidth="187.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label text="Select Department" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu" size="16.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </FlowPane>
+            <JFXComboBox fx:id="depart" layoutX="37.0" layoutY="43.0" prefHeight="26.0" prefWidth="187.0" promptText="Please Select!" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="18.0" layoutY="154.0" prefHeight="204.0" prefWidth="266.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <FlowPane alignment="CENTER" layoutX="36.0" layoutY="-18.0" prefHeight="36.0" prefWidth="187.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label text="Select Degree Program" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu" size="15.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </FlowPane>
+            <JFXRadioButton fx:id="BS4Y" disable="true" layoutX="1.0" layoutY="35.0" prefHeight="16.0" prefWidth="179.0" snapToPixel="false" text="Bachelors (4-year) Degree Program" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Ubuntu" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#ababab" />
+               </effect>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="MS" disable="true" layoutX="11.0" layoutY="130.0" prefHeight="15.0" prefWidth="187.0" text="Masters (2-year) Degree Program" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Ubuntu" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#ababab" />
+               </effect>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="Phd" disable="true" layoutX="1.0" layoutY="172.0" prefHeight="15.0" prefWidth="197.0" text="Phd." textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Ubuntu" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#ababab" />
+               </effect>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="BS2Y" disable="true" layoutX="1.0" layoutY="82.0" prefHeight="16.0" prefWidth="173.0" text="Bachelors (2-year) Degree Program" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Ubuntu" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#ababab" />
+               </effect>
+            </JFXRadioButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="380.0" prefHeight="50.0" prefWidth="261.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="14.0" layoutY="6.0" text="Do you agree to">
+               <font>
+                  <Font name="Ubuntu Bold" size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#bcbcbc" />
+               </effect>
+            </Label>
+            <Label layoutX="14.0" layoutY="28.0" text="terms and conditions" textAlignment="CENTER">
+               <font>
+                  <Font name="Ubuntu Bold" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#d0cece" />
+               </effect>
+            </Label>
+            <Label layoutX="156.0" layoutY="27.0" text="?">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXCheckBox fx:id="agree" disable="true" layoutX="196.0" layoutY="16.0" text="Yes">
+               <effect>
+                  <DropShadow color="#979797" />
+               </effect>
+            </JFXCheckBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

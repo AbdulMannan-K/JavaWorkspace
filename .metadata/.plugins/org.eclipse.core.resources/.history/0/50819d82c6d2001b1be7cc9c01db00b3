@@ -1,0 +1,77 @@
+package DataHandling;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+import models.Admin;
+import models.Customer;
+
+public class ReadAdmin {
+		
+	DataHandle data = new DataHandle();
+	
+	public void read() {
+		
+		try {
+			FileReader read = new FileReader("Admin.txt");
+			BufferedReader reader = new BufferedReader(read);
+			String line;
+			
+			
+			while((line=reader.readLine())!=null) {
+				StringTokenizer st = new StringTokenizer(line);
+				if(st.hasMoreTokens())
+					data.getAdmins().add(new Admin(st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken()));
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	
+	public void writeData() {
+		try {
+			FileWriter write = new FileWriter("AdminData.txt");
+			
+			for(Customer customer : data.getAdmins().get(0).getCustomers()) {
+				write.write(customer.getUserName()+","+customer.getPassword()+","+customer.getEmail()+","+customer.getFirstName()+","+customer.getLastName()+","+customer.getPhoneNumber()+","+customer.getAdress()+"\n");
+			}
+			
+			
+			write.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void readData() {
+		try {
+			FileReader file = new FileReader("AdminData.txt");
+			BufferedReader read = new BufferedReader(file);
+			String line;
+			
+			while((line=read.readLine())!=null) {
+				String parts[] = line.split(",");
+				
+				for(Admin admin : data.getAdmins()) {
+					admin.getCustomers().add(new Customer(parts[0],parts[1],parts[2],parts[3],parts[4],parts[5],parts[6]));
+				}
+			}
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
